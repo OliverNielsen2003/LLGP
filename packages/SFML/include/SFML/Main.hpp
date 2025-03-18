@@ -37,3 +37,7 @@
 #define main sfmlMain
 
 #endif
+
+int main();
+
+int WinMain();
