@@ -22,7 +22,7 @@ namespace LLGP
 			listener = std::move(func);
 		}
 		bool operator==(const Binding<T...>& rhs) { return contextObj == rhs.contextObj; }
-		bool operator!=(const Binding<T...>& rhs) { return !(this == rhs); }
+		//bool operator!=(const Binding<T...>& rhs) { return !(this == rhs); }
 		constexpr size_t hash_code() const noexcept { return listener.target_type().hash_code(); }
 		Binding<T...>& Invoke(T... args) { listener(static_cast<T&&>(args)...); return (*this); }
 		void operator()(T... args) { listener(static_cast<T&&>(args)...); }
